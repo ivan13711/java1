@@ -1,27 +1,42 @@
-var picture[1]{
-  if (picture1.classList.contains("hidden")){
-     picture2 .classList.add("hidden");
-     picture3 .classList.add("hidden");
-   }
-   else {
-           picture2.classList.add("hidden");
-            picture3 .classList.add("hidden");
+var left = document.getElementById('left');
+var right = document.getElementById('right');
+var p1 = document.getElementById('picture1');
+var p2 = document.getElementById('picture2');
+var p3 = document.getElementById('picture3');
+var number = document.getElementById('number');
+number.innerHTML = 2;
+   p2.classList.remove("hidden");
+left.addEventListener('click', function(){
+  if(p1.classList.contains("hidden") && p2.classList.contains("hidden")){
+    p2.classList.remove("hidden");
+    p3.classList.add("hidden");
+    number.innerHTML = 2;
+    }
+    else if(p1.classList.contains("hidden") && p3.classList.contains("hidden")){
+     p1.classList.remove("hidden");
+     p2.classList.add("hidden");
+      number.innerHTML = 1;
      }
-     picture[2]{
-       if (picture2.classList.contains("hidden")){
-          picture1 .classList.add("hidden");
-          picture3 .classList.add("hidden");
+    else if(p2.classList.contains("hidden") && p3.classList.contains("hidden")){
+      p1.classList.add("hidden");
+      p3.classList.remove("hidden");
+      number.innerHTML = 3;
+      }
+    });
+    right.addEventListener('click', function(){
+      if(p1.classList.contains("hidden") && p2.classList.contains("hidden")){
+         p1.classList.remove("hidden");
+        p3.classList.add("hidden");
+        number.innerHTML = 1;
         }
-        else {
-                picture1.classList.add("hidden");
-                 picture3 .classList.add("hidden");
+        else if(p1.classList.contains("hidden") && p3.classList.contains("hidden")){
+         p2.classList.add("hidden");
+          p3.classList.remove("hidden");
+          number.innerHTML = 3;
+         }
+        else if(p2.classList.contains("hidden") && p3.classList.contains("hidden")){
+          p1.classList.add("hidden");
+          p2.classList.remove("hidden");
+          number.innerHTML = 2;
           }
-          picture[3]{
-            if (picture3.classList.contains("hidden")){
-               picture1 .classList.add("hidden");
-               picture2 .classList.add("hidden");
-             }
-             else {
-                     picture1.classList.add("hidden");
-                      picture2 .classList.add("hidden");
-               }
+        });
